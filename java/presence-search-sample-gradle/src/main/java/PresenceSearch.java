@@ -88,7 +88,12 @@ public class PresenceSearch {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		if (!(args.length == 1 || args.length == 2)) {
+			System.out.println("Usage: gradle run --args '<sub key> <optional: origin>");
+			System.out.println("\t\tExample: gradle run --args 'myreallylongsubkeystring'");
+			System.out.println("\t\tExample: gradle run --args 'myreallylongsubkeystring mycustom.pubnub.com'");
+			System.exit(0);
+		}
 		PNConfiguration pnConfiguration = new PNConfiguration();
 		pnConfiguration.setSecure(false);
 		pnConfiguration.setSubscribeKey(args[0]);
